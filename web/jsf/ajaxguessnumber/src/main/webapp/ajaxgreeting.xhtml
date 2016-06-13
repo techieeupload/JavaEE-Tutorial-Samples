@@ -31,11 +31,12 @@
             <p>
                 <h:inputText id="userNo" 
                              title="Enter a number from 0 to 10:"
-                             value="#{userNumberBean.userNumber}">
+                             value="#{userNumberBean.userNumber}" valueChangeListener="#{userNumberBean.beanValueChangeListener}" 
+                             validatorMessage="This is always going to be " converterMessage="Hey Man Conversion Failed">
                     <f:validateLongRange minimum="#{dukesNumberBean.minimum}"
                                          maximum="#{dukesNumberBean.maximum}"/>
                 </h:inputText>
-
+                ${userNumberBean.sysDate}
                 <h:commandButton id="submit" value="Submit">
                     <f:ajax execute="userNo" render="outputGroup" />
                 </h:commandButton>

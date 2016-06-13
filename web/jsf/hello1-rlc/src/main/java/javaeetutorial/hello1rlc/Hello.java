@@ -9,7 +9,7 @@ package javaeetutorial.hello1rlc;
 
 import javax.enterprise.inject.Model;
 
-@Model
+@Model // Mix of both @Named and @Request Scope 
 public class Hello {
 
     private String name;

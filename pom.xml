@@ -155,7 +155,8 @@
             </plugins>
         </pluginManagement>
         <plugins>
-            <plugin>
+            <!--Commenting out the auto deployment on glassfish-->
+<!--            <plugin>
                 <groupId>org.codehaus.cargo</groupId>
                 <artifactId>cargo-maven2-plugin</artifactId>
                 <inherited>true</inherited>
@@ -179,12 +180,12 @@
                         <home>${glassfish.home}/glassfish/domains</home>
                         <properties>
                             <cargo.glassfish.domain.name>${glassfish.domain.name}</cargo.glassfish.domain.name>
-                            <!--cargo.remote.username></cargo.remote.username-->
+                            cargo.remote.username></cargo.remote.username
                             <cargo.remote.password />
                         </properties>
                     </configuration>
                 </configuration>
-            </plugin>
+            </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

@@ -8,7 +8,9 @@
 package javaeetutorial.ajaxguessnumber;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.event.ValueChangeEvent;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -40,5 +42,13 @@ public class UserNumberBean implements Serializable {
         } else {
             return "Sorry, " + userNumber + " is incorrect.";
         }
+    }
+    
+    public void beanValueChangeListener(ValueChangeEvent event){
+        System.out.println("Hey I am here ");
+    }
+    
+    public Date getSysDate(){
+        return new Date();
     }
 }

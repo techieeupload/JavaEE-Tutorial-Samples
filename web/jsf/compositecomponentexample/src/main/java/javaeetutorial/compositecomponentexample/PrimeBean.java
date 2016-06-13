@@ -10,14 +10,20 @@ package javaeetutorial.compositecomponentexample;
 import java.io.Serializable;
 import java.math.BigInteger;
 import javax.enterprise.inject.Model;
+import javax.faces.bean.SessionScoped;
+import javax.faces.event.AbortProcessingException;
+import javax.faces.event.ValueChangeEvent;
+import javax.inject.Named;
 import javax.validation.constraints.Size;
 
+//@Named
+//@javax.enterprise.context.SessionScoped
 @Model
 public class PrimeBean implements Serializable {
 
     private static final long serialVersionUID = -50939649434906127L;
     private static int[] primes;
-    @Size(min=1, max=45)
+    @Size(min = 1, max = 45)
     private String name;
     private boolean prime;
     private String response;
@@ -32,7 +38,7 @@ public class PrimeBean implements Serializable {
 
     /**
      * Sum up the letter values, then determine if the sum is prime.
-     * 
+     *
      * @return String the index page
      */
     public String calculate() {
@@ -114,8 +120,8 @@ public class PrimeBean implements Serializable {
     }
 
     /**
-     * Creates an array of all primes up through 1171 (one greater than
-     * the sum of 45 Z's, since the maximum string length is 45)
+     * Creates an array of all primes up through 1171 (one greater than the sum
+     * of 45 Z's, since the maximum string length is 45)
      */
     public static void setPrimes() {
         BigInteger i;

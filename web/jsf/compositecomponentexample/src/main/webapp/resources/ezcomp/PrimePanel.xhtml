@@ -41,7 +41,13 @@
                                  value="#{cc.attrs.primeBean.name}" 
                                  required="true"/>
                 </h:panelGrid>
-
+                <h:panelGroup layout="block" id="childrenPanel">
+                    <composite:insertChildren />
+                </h:panelGroup>
+                
+                <br/>
+                <h:outputText value="#{component.findComponent('childrenPanel').childCount}"/>
+                <br/>
                 <p>
                     <h:commandButton id="calcButton" 
                                      value="#{cc.attrs.calcButtonText}"
@@ -74,3 +80,4 @@
         </composite:implementation>
     </h:body>
 </html>
+<!-- http://stackoverflow.com/questions/6377542/jsf2-composite-components-are-cc-childcount-and-compositeinsertchildren -->
